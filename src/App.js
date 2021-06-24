@@ -7,21 +7,22 @@ import { auth, firebase, database } from './services/firebase'
 export const AuthContext = createContext({})
 function App() {
   const [user, setUser]=useState()
-  function signinWithGoogle(){
+  async function signinWithGoogle(){
     const provider = new firebase.auth.GoogleAuthProvider();
-      auth.signInWithPopup(provider).then(res=>{      
-        if(res.user){
-          const {displayName, photoURL, uid} = res.user
-          if(!displayName|| !photoURL){
-            throw new Error ('Missing informations from Google Account.')
-          }
-          setUser({
-            id:uid,
-            name:displayName,
-            avatar:photoURL
-          })
-        }  
+    const res = await auth.signInWithPopup(provider) 
+          
+    if(res.user){
+      const {displayName, photoURL, uid} = res.user
+      if(!displayName|| !photoURL){
+        throw new Error ('Missing informations from Google Account.')
+      }
+      setUser({
+        id:uid,
+        name:displayName,
+        avatar:photoURL
       })
+    }  
+    
   }
   return (
     <BrowserRouter>

@@ -4,9 +4,15 @@ import GoogleIcon from '../../../assets/google-icon.svg'
 import Button from '../../../components/styleguide/molecules/buttons'
 import {StyledMain, MainContent, Separator} from './styles'
 import {firebase, auth, database} from '../../../services/firebase'
+import { useContext } from 'react'
+import { AuthContext } from '../../../App'
 export const Main = ()=>{
     const history = useHistory();
-    function handleCreateRoom (){
+    const {user,signinWithGoogle} = useContext(AuthContext)
+    async function handleCreateRoom (){
+        if (!user)
+           await signinWithGoogle()
+
         history.push('rooms/new')
     }
     return(

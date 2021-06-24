@@ -1,10 +1,12 @@
 import { Link } from 'react-router-dom'
+import { useContext } from 'react'
 import LogoImg from '../../../assets/logo.svg'
 import GoogleIcon from '../../../assets/google-icon.svg'
 import Button from '../../../components/styleguide/molecules/buttons'
 import styled from 'styled-components'
 import { palette } from '../../../components/styleguide/atoms/colors'
 import atom from '../../../components/styleguide/atoms'
+import { AuthContext } from '../../../App'
 const StyledMain = styled.main`
     display:flex;
     flex-direction:column;
@@ -47,10 +49,13 @@ const MainContent = styled.div`
         }        
     }
 `
-export const Main = ()=>
-    <StyledMain>
+export const Main = ()=>{
+    const {user} = useContext(AuthContext)
+    return(
+        <StyledMain>
         <MainContent>
             <img src={LogoImg} alt="let me ask"/>
+            <h1>{user?.name}</h1>
             <h2>Crie uma nova sala</h2>
             <form>
                 <input 
@@ -65,4 +70,7 @@ export const Main = ()=>
                 Quer entrar em uma sala existente?<Link to='/'>clique aqui</Link>
             </p>
         </MainContent>
-    </StyledMain>  
+    </StyledMain> 
+    )
+}
+    
