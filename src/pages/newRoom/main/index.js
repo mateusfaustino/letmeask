@@ -6,7 +6,7 @@ import Button from '../../../components/styleguide/molecules/buttons'
 import styled from 'styled-components'
 import { palette } from '../../../components/styleguide/atoms/colors'
 import atom from '../../../components/styleguide/atoms'
-import { AuthContext } from '../../../App'
+import { AuthContext } from '../../../contexts/AuthContext'
 const StyledMain = styled.main`
     display:flex;
     flex-direction:column;

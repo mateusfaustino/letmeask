@@ -5,7 +5,7 @@ import Button from '../../../components/styleguide/molecules/buttons'
 import {StyledMain, MainContent, Separator} from './styles'
 import {firebase, auth, database} from '../../../services/firebase'
 import { useContext } from 'react'
-import { AuthContext } from '../../../App'
+import { AuthContext } from '../../../contexts/AuthContext'
 export const Main = ()=>{
     const history = useHistory();
     const {user,signinWithGoogle} = useContext(AuthContext)
