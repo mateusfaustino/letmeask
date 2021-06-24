@@ -7,11 +7,7 @@ import {firebase, auth, database} from '../../../services/firebase'
 export const Main = ()=>{
     const history = useHistory();
     function handleCreateRoom (){
-        const provider = new firebase.auth.GoogleAuthProvider();
-        auth.signInWithPopup(provider).then(res=>{
-            console.log(res);
-            history.push('rooms/new')
-        })
+        history.push('rooms/new')
     }
     return(
         <StyledMain>
