@@ -31,6 +31,14 @@
         onMainText:'#000',
         onDarkText: '#000',
         onLightText: '#000',
+    },
+    background:{
+        main: '#fafafa',
+        light: '#ffffff',
+        dark: '#10101E',
+        onMainText:'#000',
+        onDarkText: '#fff',
+        onLightText: '#000',
     }
 }
 const colors = {
