@@ -190,6 +190,7 @@ const ContainedButton = (props)=>{
             color={props.color?props.color:'primary'}
             size={props.size?props.size:'medium'}
             onClick={props.onClick}
+            type={props.type}
         >
             {props.children}
         </StyledContainedButton>
