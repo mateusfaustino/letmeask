@@ -4,12 +4,9 @@ import {NewRoom} from './pages/newRoom'
 import {Room} from './pages/room'
 import GlobalStyle from './components/styleguide/atoms/global'
 import {BrowserRouter,Route, Switch} from 'react-router-dom'
-import { auth, firebase, database } from './services/firebase'
 import {AuthContextProvider} from './contexts/AuthContext'
 
 function App() {
-  
-
   return (
     <BrowserRouter>
       <GlobalStyle/>
