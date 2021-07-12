@@ -1,7 +1,6 @@
 import { Link, useHistory} from 'react-router-dom'
 import { useContext, useState} from 'react'
 import LogoImg from '../../../assets/logo.svg'
-import GoogleIcon from '../../../assets/google-icon.svg'
 import Button from '../../../components/styleguide/molecules/buttons'
 import { AuthContext } from '../../../contexts/AuthContext'
 import { StyledMain, MainContent } from './styles'
